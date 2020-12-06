@@ -1,0 +1,141 @@
+    // Place all the styles related to the Welcome controller here.
+    // They will automatically be included in application.css.
+    // You can use Sass (SCSS) here: https://sass-lang.com/
+    body {
+        background: #000000 url('bilgisayar.jpg');
+    }
+    
+    h1 {
+        color: rgb(216, 153, 216);
+        text-align: center;
+        animation-duration: 1s;
+        animation-name: slidein;
+    }
+    
+    @keyframes slidein {
+        from {
+            margin-left: 100%;
+            width: 300%;
+        }
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+    
+    h2 {
+        color: slateblue;
+        text-align: center;
+        animation-duration: 1s;
+        animation-name: slidein;
+    }
+    
+    h3 {
+        color: antiquewhite;
+        text-align: center;
+    }
+    
+    p {
+        font-family: verdana;
+        font-size: 20px;
+    }
+    
+    .button {
+        background-color: #cac2c9d5;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        right: 50px;
+        width: 100%;
+        font-size: 35px;
+    }
+    
+    tr {
+        color: white;
+    }
+    
+    .baslik {
+        color: white;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    .field {
+        color: white;
+        text-align: center;
+    }
+    
+    .actions {
+        text-align: center;
+    }
+    
+    .cancel {
+        text-align: center;
+        color: white;
+    }
+    
+    .back {
+        text-align: center;
+        color: white;
+    }
+    
+    .comment {
+        text-align: center;
+        color: white;
+    }
+    
+    .text {
+        color: white;
+        text-align: center;
+    }
+    
+    th {
+        color: rgb(97, 167, 177);
+        font-size: 30px;
+    }
+    
+    tr {
+        font-size: 30px;
+    }
+    
+    .wish {
+        color: rgb(97, 167, 177);
+    }
+    
+    .show {
+        color: aliceblue;
+    }
+    
+    .permission {
+        color: rgb(216, 153, 216);
+    }
+    
+    .mb-3 {
+        color: rgb(216, 153, 216);
+    }
+    
+    .notice {
+        color: rgba(68, 0, 255, 0.884);
+        text-align: center;
+    }
+    
+    .lnk {
+        text-align: center;
+        color: wheat;
+    }
+    
+    .approve {
+        text-align: center;
+    }
+    
+    .ortala {
+        margin-left: 40%;
+        margin-right: 40%;
+        width: 80%;
+    }
+    
+    .cmt {
+        font-size: 18px;
+    }

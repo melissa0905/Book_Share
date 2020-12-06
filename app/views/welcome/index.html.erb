@@ -1,0 +1,38 @@
+<h1 align=center>Welcome My Book Share Site</h1>
+
+<h2> <p>Books</p> </h2>
+<% if current_user.present? %>
+  <button type="button" class="btn btn-light">
+
+  <%= link_to 'New Book', new_book_path %>
+  </button>
+
+<%else%>
+  <p class="text">If you want book share, register please !</p>
+<%end%>
+
+  <hr>
+  <table border='10'>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Username</th>
+      <%if current_user%>
+        <th>Show</th>
+      <% end %>
+      </tr>
+ 
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.author %></td>
+      <td><%= book.user.username %></td>
+      <% if current_user %>
+      <td class="show"><%= link_to 'Show', book %></td>
+      <% end %>
+     
+    </tr>
+  <% end %>
+  </table>
+ 
+ 

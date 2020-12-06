@@ -1,0 +1,68 @@
+<div class="permission">
+<p>
+  <strong>Share Status:</strong>
+  <%= @book.share %>
+  <%= link_to "Back", :controller => :dashboard, :action => :index %>
+  <% if current_user.id == @book.user.id %>
+    <%= link_to 'Edit', edit_book_path %>
+  <% end %>
+</p>
+</div>
+
+<% if @book.tradeable %>
+    <% if @trade_control %>
+      <% if @trade_control.trade_status == "waiting" %>
+        <h3 class="alert alert-primary">Tradeable: <a href="<%= new_book_trade_path(@book.id) %>" class="btn btn-primary text-white disabled">Waiting </a></h3>
+      <% else %>
+        <h3 class="alert alert-primary">Tradeable: <a href="<%= new_book_trade_path(@book.id) %>" class="btn btn-primary text-white">Trade </a></h3>
+      <% end %>
+    <% else %>
+      <h3 class="alert alert-primary">Tradeable: <a href="<%= new_book_trade_path(@book.id) %>" class="btn btn-primary text-white">Trade </a></h3>
+    <% end %>
+  <% end %>
+
+ <table border=2>
+ <thead>
+  <th>Title</th> 
+  <th>Author</th> 
+  <th>Pagecount</th>
+  <th>Username</th>
+  
+   
+ </thead>
+
+<tbody>
+  <tr id='<%= @book.id %>' >
+  <td><%= @book.title %></td>
+  <td><%= @book.author %></td>
+  <td><%= @book.pagecount %></td>
+  <td><%= @book.user.username %></td> 
+  
+   </tr>
+  
+</tbody>
+
+</table>
+<div class="comment">
+<div id="flash_notice"></div>
+<h3 class="permission"> Comments</h3>
+<%= render @comments %>
+<h4 class="permission"> Permission to Comments</h4>
+<%= render @show_comments %>
+<div class="comments"></div>
+<hr>
+<h3 class="permission">Add Comments</h3>
+<%= form_with(model: [ @book, @book.comments.build ], local: false) do |form| %>
+  <p class="title">
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p class="content">
+    <%= form.label :content %><br>
+    <%= form.text_field :content %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>

@@ -1,0 +1,24 @@
+<h1>Profile</h1>
+<br>
+<h3>Username: <%= @user.username %></h3>
+<h3>Email: <%= @user.email%></h3>
+<h2>Books</h2>
+<hr>
+
+<table border='2'>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Action</th>
+  </tr>
+
+  <% @books.each do |book| %>
+    <tr>
+    <% if book.share? %>
+      <td><%= book.title %></td>
+      <td><%= book.author %></td>
+      <td><%= link_to 'Show', book_path(book) %></td>
+    <%end%>
+    </tr>
+  <% end %>
+</table>

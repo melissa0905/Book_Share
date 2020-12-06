@@ -1,0 +1,15 @@
+<h1 class="m-3">Trade of books</h2>
+
+<h3 class="m-3"><%= "The book called #{@book.title} was shared by #{@user.username} ."  %></h3>
+<h3 class="m-3"><%= "Which book would you recommend?"  %></h3>
+<div class="ortala">
+<%= form_with(model: [ @book, @book.trades.build ], local: true) do |form|  %>
+  <div class="form-group m-3">
+    <h4 class="mb-3">Please Select Book</h4>
+    <%= form.select(:offered_book_id, @books.map{|book| [book.title, book.id]},{},{:class=>"form-control form-control-lg col-3 "})%>
+     
+   </div>  
+  <button type="submit" class="btn btn-primary m-3 ml-5">Submit</button>
+</div>
+
+<% end %>

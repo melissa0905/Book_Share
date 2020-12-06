@@ -1,0 +1,10 @@
+<h1>Content</h1>
+<h2><%= Book.find(@comment.book_id).title %> book comment</h2>
+<h3>Title: <%= @comment.title %></h3>
+<h3>Content: <%= @comment.content %></h3>
+<div class="approve">
+ <button type="button" class="btn btn-light">
+
+<%= link_to "Approve",  edit_book_comment_path(@comment.id)%>
+    </button>
+</div>
