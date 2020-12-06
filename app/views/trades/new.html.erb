@@ -7,7 +7,6 @@
   <div class="form-group m-3">
     <h4 class="mb-3">Please Select Book</h4>
     <%= form.select(:offered_book_id, @books.map{|book| [book.title, book.id]},{},{:class=>"form-control form-control-lg col-3 "})%>
-     
    </div>  
   <button type="submit" class="btn btn-primary m-3 ml-5">Submit</button>
 </div>

@@ -9,7 +9,7 @@
 </p>
 </div>
 
-<% if @book.tradeable %>
+<% if @book.tradeable && current_user.books.any?%>
     <% if @trade_control %>
       <% if @trade_control.trade_status == "waiting" %>
         <h3 class="alert alert-primary">Tradeable: <a href="<%= new_book_trade_path(@book.id) %>" class="btn btn-primary text-white disabled">Waiting </a></h3>
