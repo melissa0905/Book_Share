@@ -1,38 +1,38 @@
-<h1 align=center>Welcome My Book Share Site</h1>
 
-<h2> <p>Books</p> </h2>
+
+<div class="jumbotron">
+  <h1 >WELCOME BOOK SHARE SİTE!!</h1>
+</div>
 <% if current_user.present? %>
-  <button type="button" class="btn btn-light">
-
-  <%= link_to 'New Book', new_book_path %>
-  </button>
-
+  <p class="text">It's time to share a new book</p>
 <%else%>
   <p class="text">If you want book share, register please !</p>
 <%end%>
-
-  <hr>
-  <table border='10'>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Username</th>
-      <%if current_user%>
-        <th>Show</th>
+<hr>
+<h1>BOOKS</h1>
+ <div class="container-fluid">
+ <div id="deneme">
+   <div class="row center ml-5">
+      <% @books.each do |book| %>
+        <% user = User.find(book.user_id) %>
+        <div class="card text-white bg-secondary m-5 col-4" style="min-width: 26rem;">
+          <div class="card-header bg-dark font-weight-bold text-white rounded text-center pt-3">
+            <% if current_user %>
+              <%= link_to 'Show', book_path(book), class:"btn btn-info text-white" %>
+            
+            <%else%>
+              <img src="/assets/books.gif" alt="book" style="width:20%" >
+            <% end %>
+          </div>
+          
+          <div class="card-body">   
+            <p><p class="card-title font-weight-bold d-inline text-dark"> Title : </p><%= book.title %></p><hr>
+            <p><p class="card-title font-weight-bold d-inline text-dark"> Author : </p><%= book.author %></p><hr>
+            <p><p class="card-title font-weight-bold d-inline text-dark"> Username : </p><%= user.username %></p><hr>
+            
+          </div>
+        </div>
       <% end %>
-      </tr>
- 
-    <% @books.each do |book| %>
-    <tr>
-      <td><%= book.title %></td>
-      <td><%= book.author %></td>
-      <td><%= book.user.username %></td>
-      <% if current_user %>
-      <td class="show"><%= link_to 'Show', book %></td>
-      <% end %>
-     
-    </tr>
-  <% end %>
-  </table>
- 
- 
+    </div>
+  </div>
+</div>

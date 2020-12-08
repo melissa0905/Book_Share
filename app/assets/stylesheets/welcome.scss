@@ -1,145 +1,175 @@
-    // Place all the styles related to the Welcome controller here.
-    // They will automatically be included in application.css.
-    // You can use Sass (SCSS) here: https://sass-lang.com/
-    body {
-        background: #000000 url('gri.jpg');
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    background: #000000 url('gri.jpg');
+}
+
+h1 {
+    text-align: center;
+    color: #202c2d;
+    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+    color: #202c2d;
+    animation-duration: 1s;
+    animation-name: slidein;
+    font-size: 100px;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
     }
-    
-    h1 {
-        color: rgb(216, 153, 216);
-        text-align: center;
-        animation-duration: 1s;
-        animation-name: slidein;
-    }
-    
-    @keyframes slidein {
-        from {
-            margin-left: 100%;
-            width: 300%;
-        }
-        to {
-            margin-left: 0%;
-            width: 100%;
-        }
-    }
-    
-    h2 {
-        color: slateblue;
-        text-align: center;
-        animation-duration: 1s;
-        animation-name: slidein;
-    }
-    
-    h3 {
-        color: antiquewhite;
-        text-align: center;
-    }
-    
-    p {
-        font-family: verdana;
-        font-size: 20px;
-    }
-    
-    .button {
-        background-color: #cac2c9d5;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        right: 50px;
-        width: 100%;
-        font-size: 35px;
-    }
-    
-    tr {
-        color: white;
-    }
-    
-    .baslik {
-        color: white;
-    }
-    
-    table {
+    to {
+        margin-left: 0%;
         width: 100%;
     }
-    
-    .field {
-        color: white;
-        text-align: center;
-    }
-    
-    .actions {
-        text-align: center;
-    }
-    
-    .cancel {
-        text-align: center;
-        color: white;
-    }
-    
-    .back {
-        text-align: center;
-        color: white;
-    }
-    
-    .comment {
-        text-align: center;
-        color: white;
-    }
-    
-    .text {
-        color: white;
-        text-align: center;
-    }
-    
-    th {
-        color: rgb(97, 167, 177);
-        font-size: 30px;
-    }
-    
-    tr {
-        font-size: 30px;
-    }
-    
-    .wish {
-        color: rgb(97, 167, 177);
-    }
-    
-    .show {
-        color: aliceblue;
-    }
-    
-    .permission {
-        color: rgb(216, 153, 216);
-    }
-    
-    .mb-3 {
-        color: rgb(216, 153, 216);
-    }
-    
-    .notice {
-        color: rgba(68, 0, 255, 0.884);
-        text-align: center;
-    }
-    
-    .lnk {
-        text-align: center;
-        color: wheat;
-    }
-    
-    .approve {
-        text-align: center;
-    }
-    
-    .ortala {
-        margin-left: 40%;
-        margin-right: 40%;
-        width: 80%;
-    }
-    
-    .cmt {
-        font-size: 18px;
-    }
-    
-    .pfield {
-        color: white;
-    }
+}
+
+h2 {
+    text-align: center;
+    color: #202c2d;
+    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+    color: #202c2d;
+    animation-duration: 1s;
+    animation-name: slidein;
+    font-size: 100px;
+}
+
+h3 {
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #cac2c9d5;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    right: 50px;
+    width: 100%;
+    font-size: 35px;
+}
+
+tr {
+    color: white;
+}
+
+.baslik {
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+.field {
+    color: rgb(13, 115, 141);
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+}
+
+.cancel {
+    text-align: center;
+    color: rgb(26, 10, 116);
+}
+
+.back {
+    text-align: center;
+    color: white;
+}
+
+.comment {
+    text-align: center;
+    color: rgb(41, 3, 53);
+}
+
+.text {
+    color: #000000;
+    text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+    color: #000000;
+    text-align: center;
+}
+
+th {
+    color: rgb(3, 9, 10);
+    font-size: 30px;
+}
+
+tr {
+    font-size: 100px;
+    color: rgb(13, 8, 83);
+}
+
+.wish {
+    color: rgb(97, 167, 177);
+}
+
+.show {
+    color: aliceblue;
+}
+
+.permission {
+    color: rgba(56, 73, 151, 0.753);
+}
+
+.mb-3 {
+    color: rgba(58, 31, 207, 0.644);
+}
+
+.notice {
+    color: rgba(68, 0, 255, 0.884);
+    text-align: center;
+}
+
+.lnk {
+    text-align: center;
+    color: wheat;
+}
+
+.approve {
+    text-align: center;
+}
+
+.ortala {
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 80%;
+}
+
+.cmt {
+    font-size: 18px;
+}
+
+.pfield {
+    color: white;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+#deneme {
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
