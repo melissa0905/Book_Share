@@ -1,21 +1,19 @@
 <h1>DASHBOARD</h1>
-<h2>Books</h2>
-<table border=10>
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Pagecount</th>
-    <th>Share</th>
-    
-    
-    <th colspan="3"></th>
-  </tr>
+<div class="container">
+<h2>BOOKS</h2>
+<table class="table table-striped mb-5 mt-2 text-dark">
+  <thead class="thead-dark">
+    <tr class="thd">
+      <th>Title</th>
+      <th>Author</th>
+      <th>Pagecount</th>
+      <th>Share</th>
+      <th class="bth" colspan="3" >Events</th>
+    </tr>
   </thead>
-
   <tbody>
   <% @books.each do |book| %>
-    <tr>
+    <tr class="tbd">
       <td><%= book.title %></td>
       <td><%= book.author %></td>
       <td><%= book.pagecount %></td>
@@ -27,77 +25,85 @@
   <% end %>
   </tbody>
 </table>
-
-
-<h2>Comments</h2>
-
-<table border=10>
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Book</th>
-    <th>Show</th>
-    
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @comments.each do |comment| %>
-    <tr>
-      <td><%= comment.title %></td>
-      <td><%= comment.content %></td>
-      <td><%= Book.find(comment.book_id).title %></td>
-      <td><%= comment.show %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<h2>Comments Pending Permission:</h2>
-
-<% @not_show_comments.each do |comment| %>
-  <tr>
-    <td>
-      <strong>
-      <p class="cmt">
-        <%= link_to "#{User.find(comment.user_id).username} wrote a comment your #{Book.find(comment.book_id).title} book. Clik here to accept it.", comment_path(comment) %>
-      </p>
-      </strong>
+</div>
+<div class="container">
+  <h2>Comments</h2>
+  <table class="table table-striped mb-5 mt-2 text-dark">
+    <thead class="thead-dark">
+    <tr class="thd">
+      <th>Title</th>
+      <th>Content</th>
+      <th>Book</th>
+      <th>Show</th>
       
-    </td>
-    <br>
-  </tr>
-<% end %>
-
-
-
-<table class="table table-striped mb-5 mt-2 text-dark">
-  <tr>
-    <th class="wish">Incoming Wish List</th>
-    <th class="wish">My Wish List</th>
-  </tr>
-      <tr>
-      <td>
-        <% @trades.each do |item| %>
-        <% trade_book = Book.find(item.book_id) %>
-        <% trade_user = User.find(trade_book.user_id) %>
-        <% trading_user = User.find(item.user_id) %>
-          <% if trade_user.id == current_user.id %>
-            <p class="border-bottom" class="d-block"><%= "Sends a request to the book of #{trade_book.title} with #{trading_user.username} ." %><%= link_to "Show", edit_book_trade_path(item.book.id, item.id), class:"btn btn-info text-white" %></p>
-          <% end %>
-         <% end %>
-      </td>
-      <td>
-       <% @my_wish_list.each do |item| %>
-        <%wish_book = Book.find_by_id(item.book_id)%>
-        <%wish_user = User.find_by_id(wish_book.user_id)%>
-        <p class="d-block mb-3 border-bottom"><%= "#{wish_book.title}, #{wish_user.username} #{item.trade_status}" %></p>
-        <% end %>
-      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @comments.each do |comment| %>
+      <tr class="tbd">
+        <td><%= comment.title %></td>
+        <td><%= comment.content %></td>
+        <td><%= Book.find(comment.book_id).title %></td>
+        <td><%= comment.show %></td>
       </tr>
-</table>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
+<div class="container">
+  <table class="table-dark">
+    <thead class="thead-light">
+    <th class="thd">Comments Pending Permission</th>
+    </thead>
+    <% @not_show_comments.each do |comment| %>
+      <tr class="tbd">
+        <td>
+          <p class="cmt">
+            <%= link_to "#{User.find(comment.user_id).username} wrote a comment your #{Book.find(comment.book_id).title} book. Clik here to accept it.", comment_path(comment) %>
+          </p>
+        </td>
+        
+      </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+  <table class="table table-striped mb-5 mt-2 text-dark">
+    <tr>
+    <thead class="thead-dark">
+      <th class="wish">Incoming Wish List</th>
+      <th class="wish">My Wish List</th>
+    </thead>  
+    </tr>
+    <tbody class="tbody-light">
+      <tr>
+        <td>
+          <% @trades.each do |item| %>
+          <% trade_book = Book.find(item.book_id) %>
+          <% trade_user = User.find(trade_book.user_id) %>
+          <% trading_user = User.find(item.user_id) %>
+            <% if trade_user.id == current_user.id %>
+              <p class="border-bottom" class="d-block"><%= "Sends a request to the book of #{trade_book.title} with #{trading_user.username} ." %><%= link_to "Show", edit_book_trade_path(item.book.id, item.id), class:"btn btn-info text-white" %></p>  
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+        <% @my_wish_list.each do |item| %>
+          <%wish_book = Book.find_by_id(item.book_id)%>
+          <%wish_user = User.find_by_id(wish_book.user_id)%>
+          <p class="d-block mb-3 border-bottom"><%= "#{wish_book.title}, #{wish_user.username} #{item.trade_status}" %></p>
+          <% end %>
+        </td>
+      </tr>
+   </tbody>
+  </table>
+</div>
 
 
 

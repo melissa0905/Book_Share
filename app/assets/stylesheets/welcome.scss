@@ -71,8 +71,9 @@ table {
 }
 
 .field {
-    color: rgb(13, 115, 141);
+    color: rgb(82, 92, 95);
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .actions {
@@ -112,7 +113,9 @@ tr {
 }
 
 .wish {
-    color: rgb(101, 33, 211);
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    color: #FFFFFF;
 }
 
 .show {
@@ -148,7 +151,7 @@ tr {
 }
 
 .cmt {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .pfield {
@@ -172,4 +175,14 @@ tr {
 #deneme {
     -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.thd {
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    color: #FFFFFF;
+}
+
+.bth {
+    text-align: center;
 }
