@@ -1,2 +1,10 @@
-$("#flash_notice").html("Waiting for approval ..");
-$(".comments").append("<%= escape_javascript(render(@comment)) %>");
+<% if @comment.errors.any? %>
+  $("#info").removeClass().addClass("alert alert-danger")
+  $("#info").html("Title and content cannot be empty");
+<% else %>
+  $("#info").removeClass().addClass("alert alert-success")
+  $("#flash_notice").html("Waiting for approval ..");
+  $(".comments").append("<%= escape_javascript(render(@comment))%>");
+  $("#info").html("Your message added. <%=@comment.user.username%>");
+  $('#comment_form').trigger("reset");
+<% end %>
